@@ -1,0 +1,27 @@
+### List all the Books
+GET http://localhost:4004/browse/Books
+
+### List all Books - deep read of Author
+GET http://localhost:4004/browse/Books?$expand=author
+# to make the above command work in catalog servie it has to be wildcard and remove authors.name
+# and autoexpose for author entity in schema.cds 
+
+### Try to insert into Books
+POST http://localhost:4004/browse/Books
+Content-Type: application/json
+
+{
+    "title" : "Anna Karenina",
+    "stock" : 10
+}
+
+### List orders with items- deep read
+GET http://localhost:4004/admin/Orders?$expand=items
+
+### update Books
+PUT http://localhost:4004/admin/Books/201
+Content-Type: application/json
+
+{
+	"stock": 12
+}

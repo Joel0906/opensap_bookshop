@@ -1,0 +1,24 @@
+### List all Orders - deep read
+GET http://localhost:4004/admin/Orders?$expand=items
+
+### List Orders from Admin
+GET http://localhost:4004/admin/Orders
+
+### Submit Orders - deep insert
+POST http://localhost:4004/browse/Orders
+Content-Type: application/json
+
+{
+    "orderNo" : "1234" ,
+    "items" :[
+        {"book_ID" : 201, "amount" : 15 },
+        {"book_ID" : 207, "amount" : 3 }
+    ]
+}
+
+### List orders with items and books - deep read
+GET http://localhost:4004/browse/Orders?$expand=items($expand=book) 
+
+
+### Delete Orders
+DELETE http://localhost:4004/admin/Orders(ID=ee717775-10f9-4b55-8ce4-594838fde122)

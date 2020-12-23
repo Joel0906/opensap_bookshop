@@ -1,0 +1,15 @@
+{
+  "files.exclude": {
+    "**/.gitignore": true,
+    "**/.git": true,
+    "**/.vscode": true
+},
+"actions": [],
+"sqltools.connections": [
+        {
+            "name": "sqlite-bookshop",
+            "dialect": "SQLite",
+            "database": "/home/user/projects/bookshop/bookshop.db"
+        }
+    ]
+}

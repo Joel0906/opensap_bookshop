@@ -1,0 +1,20 @@
+{
+    "requires": {
+
+            "auth" :{
+            "statergy" : "mock",
+            "users" : {
+                "joel" : {
+                    "password" : "123",
+                    "roles" : ["authenticated-user", "admin"]
+                },
+                "ethan" :{
+                    "password" : "456",
+                    "roles" : ["authenticated-user"]
+                }
+            }
+        }
+        
+
+    }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "bookshop",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^4",
+    "@sap/hana-client": "^2.6.61",
+    "express": "^4",
+    "passport": "^0.4.1"
+  },
+  "devDependencies": {
+    "sqlite3": "^5"
+  },
+  "scripts": {
+    "start": "npx cds run"
+  },
+  "cds": {
+    "hana": {
+      "deploy-format": "hdbtable"
+    },
+    "requires": {
+      "db": {
+        "kind": "sql",
+        "model": "*",
+        "credentials": {
+          "database": "bookshop.db"
+        }
+      },
+      "OP_API_BUSINESS_PARTNER_SRV": {
+        "kind": "odata",
+        "model": "srv/external/OP_API_BUSINESS_PARTNER_SRV"
+      }
+    }
+  }
+}
